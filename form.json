@@ -1,0 +1,58 @@
+{
+    "createdBy" : {
+        "type": "simple",
+        "input": "text",
+        "state": "default"
+    },
+
+    "description" : {
+        "type": "simple",
+        "input": "text",
+        "state": "default"
+    },
+
+    "severity": {
+        "type": "simple",
+        "input": "number",
+        "state": "default"
+    },
+
+    "status": {
+        "type": "complex",
+        "input": "list",
+        "state": "default",
+        "values": ["Cancelled", "Completed"]
+    },
+
+    "cancelledReason": {
+        "type": "complex",
+        "input": "list",
+        "values": ["EndUser", "Others"],
+        "state": "dependent",
+        "rule": {
+            "obj": "status",
+            "criteria": ["equals", "Cancelled"]
+        }
+    },
+
+    "cancelledOthersDescription": {
+        "type": "simple",
+        "input": "text",
+        "state": "dependent",
+        "rule": {
+            "obj": "cancelledReason",
+            "criteria": ["equals", "Others"]
+        }
+    },
+
+    "comments": {
+        "type": "simple",
+        "input": "text",
+        "state": "dependent",
+        "rule": {
+            "obj": "status",
+            "criteria": ["equals", "Completed"]
+        }
+    }
+
+}

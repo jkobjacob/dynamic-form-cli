@@ -1,0 +1,22 @@
+{
+  "name": "dy-forms",
+  "version": "1.0.0",
+  "description": "A command line tool to that renders JSON encoded forms, accept responses and store them in a JSON file",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "jest"
+  },
+  "keywords": [
+    "dynamic-forms",
+    "json-powered-forms"
+  ],
+  "author": "Sherin Jacob",
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^7.0.4"
+  },
+  "devDependencies": {
+    "jest": "^25.1.0"
+  }
+}
