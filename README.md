@@ -14,11 +14,11 @@ A command line program that reads JSON encoded form data and prompts each fields
 ```javascript
     npm start
 ```
-![](https://github.com/Jkob-Jacob/dynamic-form-cli/blob/new/gifs/run.gif)
+![](https://github.com/Jkob-Jacob/dynamic-form-cli/blob/master/gifs/run.gif)
 
 ### To run the test suites,
 
 ```javascript
     npm test
 ```
-![](https://github.com/Jkob-Jacob/dynamic-form-cli/blob/new/gifs/test.gif)
+![](https://github.com/Jkob-Jacob/dynamic-form-cli/blob/master/gifs/test.gif)
