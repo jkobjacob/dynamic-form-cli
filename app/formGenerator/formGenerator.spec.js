@@ -1,17 +1,19 @@
 const formGenerator = require('./formGenerator');
-const form = require('../../form.json');
-
-var prompts;
-
-beforeAll(() => {
-    prompts = formGenerator(Object.keys(form),form);
-});
 
 
 describe('=> FormGenerator being tested',() => {
 
-    test('is there a prompt object generated for every form field',() => {
-        expect(prompts.length).toBe(7)
+    test('does it export a defaultFormFieldsGenerator',() => {
+        expect(Object.keys(formGenerator).includes('defaultFormFieldsGenerator',0)).toBe(true);
     });
+
+    
+    test('does it export a dependentFormFieldsGenerator',() => {
+        expect(Object.keys(formGenerator).includes('dependentFormFieldsGenerator',0)).toBe(true);
+    });
+
+    test('is the exported objects are both functions', () => {
+        expect(Object.keys(formGenerator).filter(x => (typeof formGenerator[x]) === 'function').length).toBe(2);
+    })
 });
 

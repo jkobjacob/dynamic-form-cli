@@ -5,7 +5,7 @@ var value;
 
 beforeAll(() => {
     testObject = {"createdBy":"sherin"};
-    value = ruleGenerator('createdBy','equals','sherin');
+    value = ruleGenerator('createdBy','isEqual','sherin');
 });
 
 describe('RuleGenerator Being Tested',() => {

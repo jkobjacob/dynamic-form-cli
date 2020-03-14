@@ -15,15 +15,11 @@ var ruleFn;
 beforeAll(() => {
     testObject = {
         "createdBy": {
-            "type":"simple",
-            "state":"default",
-            "input": "text"
+            "type": "text"
         },
 
         "description": {
-            "type":"complex",
-            "state":"dependent",
-            "input":"list",
+            "type":"enumeration",
             "values": ["one","two"],
             "rule": {
                 "obj": "createdBy",

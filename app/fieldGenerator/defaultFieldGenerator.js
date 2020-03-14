@@ -12,8 +12,8 @@ const { nameDispatcher, typeDispatcher } = require('./utility/dispatchers');
     }
 */
 
-module.exports = (field,fieldProps) => {
+module.exports = (fieldName,fieldProperties) => {
     return Object.assign({},
-        nameDispatcher(field),
-        typeDispatcher(field,fieldProps));
+        nameDispatcher(fieldName),
+        typeDispatcher(fieldName,fieldProperties));
 }

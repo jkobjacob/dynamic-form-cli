@@ -1,58 +1,48 @@
 {
-    "createdBy" : {
-        "type": "simple",
-        "input": "text",
-        "state": "default"
-    },
-
-    "description" : {
-        "type": "simple",
-        "input": "text",
-        "state": "default"
-    },
-
-    "severity": {
-        "type": "simple",
-        "input": "number",
-        "state": "default"
-    },
-
-    "status": {
-        "type": "complex",
-        "input": "list",
-        "state": "default",
-        "values": ["Cancelled", "Completed"]
-    },
-
-    "cancelledReason": {
-        "type": "complex",
-        "input": "list",
-        "values": ["EndUser", "Others"],
-        "state": "dependent",
-        "rule": {
-            "obj": "status",
-            "criteria": ["equals", "Cancelled"]
+    "default": {
+        "createdBy" : {
+            "type": "text"
+        },
+    
+        "description" : {
+            "type": "text"
+        },
+    
+        "severity": {
+            "type": "number"
+        },
+    
+        "status": {
+            "type": "enumeration",
+            "values": ["Cancelled", "Completed"]
         }
+
     },
 
-    "cancelledOthersDescription": {
-        "type": "simple",
-        "input": "text",
-        "state": "dependent",
-        "rule": {
-            "obj": "cancelledReason",
-            "criteria": ["equals", "Others"]
+    "dependent": {
+        "cancelledReason": {
+            "type": "enumeration",
+            "values": ["EndUser", "Others"],
+            "rule": {
+                "obj": "status",
+                "criteria": ["isEqual", "Cancelled"]
+            }
+        },
+    
+        "cancelledOthersDescription": {
+            "type": "text",
+            "rule": {
+                "obj": "cancelledReason",
+                "criteria": ["isEqual", "Others"]
+            }
+        },
+    
+        "comments": {
+            "type": "text",
+            "rule": {
+                "obj": "status",
+                "criteria": ["isEqual", "Completed"]
+            }
         }
-    },
-
-    "comments": {
-        "type": "simple",
-        "input": "text",
-        "state": "dependent",
-        "rule": {
-            "obj": "status",
-            "criteria": ["equals", "Completed"]
-        }
-    }
-
+    } 
 }

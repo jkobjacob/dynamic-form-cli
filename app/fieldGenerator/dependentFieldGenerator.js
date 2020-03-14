@@ -13,10 +13,10 @@ const { nameDispatcher, typeDispatcher, ruleDispatcher } = require('./utility/di
     }
 */
 
-module.exports = (field,fieldProps) => {
+module.exports = (fieldName,fieldProperties) => {
     return Object.assign({},
-        nameDispatcher(field),
-        typeDispatcher(field,fieldProps),
-        ruleDispatcher(fieldProps["rule"])
+        nameDispatcher(fieldName),
+        typeDispatcher(fieldName,fieldProperties),
+        ruleDispatcher(fieldProperties["rule"])
     );
 }

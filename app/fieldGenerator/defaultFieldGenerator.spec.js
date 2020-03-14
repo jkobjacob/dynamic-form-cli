@@ -12,17 +12,13 @@ var complexObjFnKeys;
 beforeAll(() => {
     simpleTestObject = {
         "createdBy": {
-            "type":"simple",
-            "state":"default",
-            "input": "text"
+            "type": "text"
         }
     };
 
     complexTestObject = {
         "status": {
-            "type":"complex",
-            "state":"default",
-            "input": "list",
+            "type": "enumeration",
             "values":["EndUser","Others"]
         }
     };

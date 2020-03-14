@@ -12,15 +12,11 @@ var complexObjFnKeys;
 beforeAll(() => {
     simpleTestObject = {
         "createdBy": {
-            "type":"simple",
-            "state":"default",
-            "input": "text"
+            "type": "text"
         },
 
         "description": {
-            "type":"simple",
-            "state":"dependent",
-            "input":"text",
+            "type":"text",
             "rule": {
                 "obj": "createdBy",
                 "criteria": ["equals","sherin"]
@@ -30,16 +26,12 @@ beforeAll(() => {
 
     complexTestObject = {
         "status": {
-            "type":"complex",
-            "state":"default",
-            "input": "list",
+            "type": "enumeration",
             "values":["Pending","Others"]
         },
 
         "cancelledReason": {
-            "type":"complex",
-            "state":"dependent",
-            "input":"list",
+            "type":"enumeration",
             "values": ["EndUser","Others"],
             "rule": {
                 "obj": "status",

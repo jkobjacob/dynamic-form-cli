@@ -2,14 +2,14 @@
     Generates the when object responsible for prompting dependent fields.
 */
 
-const rules = require('./rules');
+const partialRuleGenerator = require('./generatePartialRule');
 
 /* 
     function that checks 
     the condition with the user input and the value required to enable the field
 */
-module.exports = (field,condition,value) => {
+module.exports = (fieldName,condition,value) => {
     return {
-        when: (answer) => rules[condition](value)(answer[field]) 
+        when: (providedInput) => (partialRuleGenerator(condition,value))(providedInput[fieldName]) 
     }
 }

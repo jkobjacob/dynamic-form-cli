@@ -3,13 +3,13 @@ const rules = require('./rules');
 var equalToTwo;
 
 beforeAll(() => {
-    equalToTwo = rules.equals(2);
+    equalToTwo = rules.isEqual(2);
 });
 
 describe('=> rules module being tested\n', () =>{
 
     test('is the equal function exported', () =>{
-        expect(Object.keys(rules)).toEqual(['equals'])
+        expect(Object.keys(rules)).toEqual(['isEqual'])
     });
 
     test('is the equal function returning a curried function\n',() => {

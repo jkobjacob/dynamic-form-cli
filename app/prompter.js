@@ -7,7 +7,8 @@ const inquirer = require('inquirer');
 ** feed the user responses object to the writer   
 */
 
-module.exports = (promptsArray) => {
-    return inquirer
-        .prompt(promptsArray)
+module.exports = (arrayOfPromptObjects) => {
+    const responses = inquirer
+                        .prompt(arrayOfPromptObjects);
+    return responses;
 };
